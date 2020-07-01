@@ -6,6 +6,8 @@ interface Request {
   id: string;
 }
 
+/* Verifica se a transação existe e a deleta, ou joga um erro */
+
 class DeleteTransactionService {
   public async execute({ id }: Request): Promise<void> {
     const transactionRepository = getCustomRepository(TransactionsRepository);

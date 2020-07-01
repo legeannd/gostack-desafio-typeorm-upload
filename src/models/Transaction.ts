@@ -24,6 +24,7 @@ class Transaction {
   @Column('decimal')
   value: number;
 
+  // Como a tabela de transação possui um relacionamento de N para 1 com a tabela de categoria, é necessário explicitar através de decorators
   @ManyToOne(() => Category)
   @JoinColumn({ name: 'category_id' })
   category: Category;

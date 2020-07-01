@@ -13,6 +13,8 @@ interface Request {
   type: 'income' | 'outcome';
   category: string;
 }
+/* Verifica se o balanço é válido para adicionar a transação.
+Verifica se a categoria já existe, e caso não, cria uma nova para ser adicionada junto com a transação */
 
 class CreateTransactionService {
   public async execute({

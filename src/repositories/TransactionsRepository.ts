@@ -13,6 +13,7 @@ class TransactionsRepository extends Repository<Transaction> {
   public async getBalance(): Promise<Balance> {
     const transactions = await this.find();
 
+    // Função reduce utilizada para verificar o balanço total que o usuário tem
     const { income, outcome } = transactions.reduce(
       (accumulator: Balance, transaction: Transaction) => {
         switch (transaction.type) {
